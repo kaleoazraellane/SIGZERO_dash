@@ -1,0 +1,29 @@
+name: Dashboard Pulse
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs once a day at midnight
+  workflow_dispatch:      # Allows you to run it manually to test
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run Fetcher
+        run: python scripts/data_fetcher.py
+      - name: Update README
+        run: |
+          cat data_output.txt > README.md
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "System Pulse: Dynamic Update" || exit 0
+          git push
