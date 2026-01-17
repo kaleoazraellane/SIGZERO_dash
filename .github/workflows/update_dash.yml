@@ -1,8 +1,11 @@
 name: Dashboard Pulse
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs once a day at midnight
-  workflow_dispatch:      # Allows you to run it manually to test
+    - cron: '0 0 * * *'  # Automatic daily pulse at midnight
+  push:
+    branches:
+      - main            # Pulse triggers whenever you commit to main
+  workflow_dispatch:      # Keeps the manual button just in case
 
 jobs:
   update:
@@ -25,5 +28,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git commit -m "System Pulse: Dynamic Update" || exit 0
+          git commit -m "System Pulse: Automated Update" || exit 0
           git push
