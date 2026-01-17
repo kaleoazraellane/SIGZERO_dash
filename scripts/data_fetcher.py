@@ -1,18 +1,33 @@
 import requests
 import datetime
 
+def check_domain(url):
+    try:
+        response = requests.get(url, timeout=10)
+        status = "✅ Active" if response.status_code == 200 else f"⚠️ Code: {response.status_code}"
+    except:
+        status = "❌ Down/Unreachable"
+    return status
+
 def fetch_data():
-    # Example: Fetching a daily quote to show 'Living' data
-    response = requests.get("https://zenquotes.io/api/random")
-    if response.status_code == 200:
-        data = response.json()[0]
-        return f"> \"{data['q']}\" \n> — **{data['a']}**"
-    return "System Online: Intelligence feed pending."
+    domains = {
+        "KaleoAzraelLane.com": "https://kaleoazraellane.com",
+    }
+    
+    report = "### 🌐 Domain Reclamation Status\n\n"
+    report += "| Domain | Status |\n| :--- | :--- |\n"
+    
+    for name, url in domains.items():
+        status = check_domain(url)
+        report += f"| {name} | {status} |\n"
+    
+    return report
 
 if __name__ == "__main__":
     content = fetch_data()
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # This writes the output to a temporary file for the next step
     with open("data_output.txt", "w") as f:
-        f.write(f"### Last System Pulse: {timestamp}\n\n{content}")
+        f.write(f"## SIGZERO Intelligence Dashboard\n\n")
+        f.write(f"**Last Pulse:** `{timestamp} CST`\n\n---\n\n")
+        f.write(content)
