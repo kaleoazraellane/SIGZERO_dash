@@ -1,10 +1,10 @@
 ## SIGZERO Intelligence Dashboard
 
-**Last Pulse:** `2026-01-17 00:31:40 CST`
+**Last Pulse:** `2026-01-17 00:34:49 CST`
 
 ---
 
-### 🌐 Domain Reclamation Status
+### 🌐 Domain Status
 
 | Domain | Status |
 | :--- | :--- |
