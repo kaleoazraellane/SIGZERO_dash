@@ -14,7 +14,7 @@ def fetch_data():
         "KaleoAzraelLane.com": "https://kaleoazraellane.com",
     }
     
-    report = "### 🌐 Domain Reclamation Status\n\n"
+    report = "### 🌐 Domain Status\n\n"
     report += "| Domain | Status |\n| :--- | :--- |\n"
     
     for name, url in domains.items():
