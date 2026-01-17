@@ -8,27 +8,13 @@ def check_domain(url):
     except:
         status = "❌ Down/Unreachable"
     return status
-    def fetch_data():
-    # ... (existing domain check code) ...
-    
-    stack = """
-### 🛠️ System Architecture (The Stack)
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | React / Next.js |
-| **Backend** | Python (FastAPI) |
-| **Database** | PostgreSQL |
-| **Infrastructure** | GitHub Actions / Vercel |
-"""
-    # ... (combine this with your domain report) ...
-    return stack + report
 
 def fetch_data():
     domains = {
         "KaleoAzraelLane.com": "https://kaleoazraellane.com",
     }
     
-    report = "### 🌐 Domain Status\n\n"
+    report = "### 🌐 Domain Reclamation Status\n\n"
     report += "| Domain | Status |\n| :--- | :--- |\n"
     
     for name, url in domains.items():
