@@ -1,6 +1,6 @@
 ## SIGZERO Intelligence Dashboard
 
-**Last Pulse:** `2026-05-11 02:05:41 CST`
+**Last Pulse:** `2026-05-12 02:01:34 CST`
 
 ---
 
@@ -8,4 +8,4 @@
 
 | Domain | Status |
 | :--- | :--- |
-| KaleoAzraelLane.com | ⚠️ Code: 500 |
+| KaleoAzraelLane.com | ✅ Active |
