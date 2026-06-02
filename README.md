@@ -1,6 +1,6 @@
 ## SIGZERO Intelligence Dashboard
 
-**Last Pulse:** `2026-06-01 02:39:47 CST`
+**Last Pulse:** `2026-06-02 02:38:13 CST`
 
 ---
 
